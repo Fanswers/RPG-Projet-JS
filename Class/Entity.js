@@ -13,4 +13,5 @@ class Entity {
     this.Crit = Crit;
     this.Gold = Gold;
   }
+  
 }
