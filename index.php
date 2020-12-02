@@ -29,8 +29,11 @@
     <button id="sendPlayer">Jouer</button>
   </form>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="module" src="main.js?2"></script>
+  <div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="main.js?2"></script>
 </body>
 
 </html>

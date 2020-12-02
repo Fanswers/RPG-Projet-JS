@@ -1,12 +1,30 @@
 import { Personnage } from './Class/Personnage.js'
 import { Monster } from './Class/Monster.js'
 
+let lancement = document.querySelector("#playerForm");
+
 function Game() {
     let pers = new Personnage("Warrior");
     let mons = new Monster("Glout");
     Combat(pers, mons);
 }
 
+//Recupération des données du formulaire
+$("#sendPlayer").click(function (e) {
+    e.preventDefault();
+    let playerInfo = $("#playerForm").serializeArray();
+    game(playerInfo)
+})
+
+function game(playerInfo) {
+    //Creation du joueur
+    let player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value'])
+    let mons = new Monster("Glout");
+    console.log(player.Type);
+    console.log(player.Name);
+    $("#playerForm").toggleClass("cacher");
+    Combat(player, mons);
+}
 
 function Combat(prsng, mnstr) {
     console.log(prsng.Attaque);
@@ -44,4 +62,6 @@ function Combat(prsng, mnstr) {
     }
 }
 
-Game()
+$("#playerForm").append(`
+<form class='cacher'></form>
+`)
