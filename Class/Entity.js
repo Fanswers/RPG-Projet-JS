@@ -1,4 +1,4 @@
-class Entity {
+export class Entity {
   constructor(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold) {
     this.Type = Type;
     this.Name = Name;

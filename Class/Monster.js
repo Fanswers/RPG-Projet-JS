@@ -1,6 +1,6 @@
-import { Entity } from "Class/Entity.js";
+import { Entity } from './Entity.js';
 
-class Monster extends Entity {
+export class Monster extends Entity {
   constructor(Type, Name, Pv, Defense, Vitesse, Esquive, Attaque, Pm, Crit, Gold) {
     super(Type, Name, Pv, Defense, Vitesse, Esquive, Attaque, Pm, Crit, Gold);
     switch (Name) {
