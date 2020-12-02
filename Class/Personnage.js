@@ -1,52 +1,51 @@
 import { Entity } from './Entity.js';
 
-export class Personnage extends Entity{
+export class Personnage extends Entity {
     constructor(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold) {
         super(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold);
-        switch(Type)
-        {
+        switch (Type) {
             case "Warrior":
-                Pv = 140;
-                Attaque = 40;
-                Defense = 30;
-                Vitesse = 10;
-                Esquive = 2;
-                Pm = 10;
-                Crit = 5;
-                Gold = 0;
+                this.Pv = 140;
+                this.Attaque = 40;
+                this.Defense = 30;
+                this.Vitesse = 10;
+                this.Esquive = 2;
+                this.Pm = 10;
+                this.Crit = 5;
+                this.Gold = 0;
                 break;
 
             case "Mage":
-                Pv = 100;
-                Attaque = 40;
-                Defense = 30;
-                Vitesse = 10;
-                Esquive = 2;
-                Pm = 10;
-                Crit = 5;
-                Gold = 0;
+                this.Pv = 100;
+                this.Attaque = 40;
+                this.Defense = 30;
+                this.Vitesse = 10;
+                this.Esquive = 2;
+                this.Pm = 10;
+                this.Crit = 5;
+                this.Gold = 0;
                 break;
 
             case "Rogue":
-                Pv = 100;
-                Attaque = 40;
-                Defense = 30;
-                Vitesse = 10;
-                Esquive = 2;
-                Pm = 10;
-                Crit = 5;
-                Gold = 0;
+                this.Pv = 100;
+                this.Attaque = 40;
+                this.Defense = 30;
+                this.Vitesse = 10;
+                this.Esquive = 2;
+                this.Pm = 10;
+                this.Crit = 5;
+                this.Gold = 0;
                 break;
 
-            case "Rogue":
-                Pv = 100;
-                Attaque = 40;
-                Defense = 30;
-                Vitesse = 10;
-                Esquive = 2;
-                Pm = 10;
-                Crit = 5;
-                Gold = 0;
+            case "Archer":
+                this.Pv = 100;
+                this.Attaque = 40;
+                this.Defense = 30;
+                this.Vitesse = 10;
+                this.Esquive = 2;
+                this.Pm = 10;
+                this.Crit = 5;
+                this.Gold = 0;
                 break;
         }
     }
