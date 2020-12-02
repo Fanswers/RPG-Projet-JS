@@ -9,8 +9,24 @@
 </head>
 
 <body>
-  <form>
-    <input type="text" name="PlayerName">
+  <form id="playerForm">
+    <p>
+      Pseudo
+      <input type="text" name="name" id="playerName">
+    </p>
+    <P>
+      <input type="radio" name="class" value="Warrior"> Warrior
+    </p>
+    <P>
+      <input type="radio" name="class" value="Mage"> Mage
+    </p>
+    <P>
+      <input type="radio" name="class" value="Rogue"> Rogue
+    </p>
+    <P>
+      <input type="radio" name="class" value="Archer"> Archer
+    </p>
+    <button id="sendPlayer">Jouer</button>
   </form>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
