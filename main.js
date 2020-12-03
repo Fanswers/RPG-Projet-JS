@@ -1,8 +1,27 @@
-import { Personnage } from './Class/Personnage.js'
-import { Monster } from './Class/Monster.js'
+import { Personnage } from './Class/Personnage.js';
+import { Monster } from './Class/Monster.js';
 
-//Recupération des données du formulaire
-$("#sendPlayer").click(function(e){
+
+let datastring;
+
+$("#start").click(function(){
+    $("#start").toggleClass("cacher");
+    $("#formSave").toggleClass("cacher");
+    console.log("yes");
+    $.ajax({
+        type: 'get',
+        url: 'getPlayer.php',
+        data: datastring,
+        success: function(data) {
+            if(data != false){
+                choose(data)
+            }
+            else{
+                createPlayer()
+            }
+        }
+    })
+});
     e.preventDefault();
     let playerInfo = $("#playerForm").serializeArray();
     game(playerInfo)
