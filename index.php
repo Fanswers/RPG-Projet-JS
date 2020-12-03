@@ -89,6 +89,12 @@
     <button id="attaque4Archer" value="Position de défense">Position de défense</button>
   </div>
 
+    <!-- Ecran des données du joueur -->
+    <div id="fightPlayerData" class="cacher">   
+        <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
+        <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+    </div>
+
   <!-- Ecran lors de la victoire d'un combat -->
   <div id="victoireCombat" class="cacher">
     <h1>Vous avez gagné !</h1>
