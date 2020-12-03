@@ -42,7 +42,7 @@ $('#sendPlayer').click(function (e) {
     e.preventDefault();
     playerInfo = $('#playerForm').serializeArray();
     player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value']);
-    monster = new Monster("Glout");
+    GenerationMonstre(player.Etape);
     $.ajax({
         url: 'savePlayer.php',
         method: 'POST',
@@ -66,24 +66,28 @@ function FinDeCombat() {
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
-        GenerationMonstre()
+        GenerationMonstre(player.Etape)
     } else if (monster.Pv <= 0) {
         player.Gold += monster.Gold;
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
-        GenerationMonstre()
+        GenerationMonstre(player.Etape)
     }
 }
 
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
-function GenerationMonstre() {
+function GenerationMonstre(etape) {
     if (player.Pv <= 0) {
+        player.Etape = 0;
         monster = new Monster("Glout");
-    } else if (monster.Type == "Glout") {
+    } else if (etape == 0) {
+        player.Etape += 1;
         monster = new Monster("Groco");
-    } else if (monster.Type == "Groco") {
+    } else if (etape == 1) {
+        player.Etape += 1;
         monster = new Monster("Tankse");
-    } else if (monster.Type == "Tankse") {
+    } else if (etape == 2) {
+        player.Etape += 1;
         monster = new Monster("Noxpul");
     }
 }
