@@ -2,16 +2,16 @@ import { Personnage } from './Class/Personnage.js';
 import { Monster } from './Class/Monster.js';
 
 // Initialisation d'une variable player et monster hors fonction pour pouvoir les récupérer n'importe ou
-
 let player = new Personnage("Warrior");
 let monster;
 let datastring;
 let playerInfo;
+let dataArray;
+
 
 $("#start").click(function () {
     $("#start").toggleClass("cacher");
     $("#formSave").toggleClass("cacher");
-    console.log("yes");
     $.ajax({
         type: 'get',
         url: 'getPlayer.php',
@@ -21,7 +21,7 @@ $("#start").click(function () {
                 choose(data)
             }
             else {
-                createPlayer()
+                $("#loadSave").toggleClass("cacher");
             }
         }
     })
@@ -29,9 +29,9 @@ $("#start").click(function () {
 
 function choose(data) {
     data = data.replace(/["']/g, "");
-    var array = data.split(",");
-    $("#savedName").text(array[1]);
-    $("#savedType").text(array[0]);
+    dataArray = data.split(",");
+    $("#savedName").text(dataArray[1]);
+    $("#savedType").text(dataArray[0]);
 }
 
 $("#newGame").click(function (e) {
@@ -63,7 +63,7 @@ $('#sendPlayer').click(function (e) {
     e.preventDefault();
     playerInfo = $('#playerForm').serializeArray();
     player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value']);
-    monster = new Monster("Glout");
+    GenerationMonstre(player.Etape);
     $.ajax({
         url: 'savePlayer.php',
         method: 'POST',
@@ -89,24 +89,28 @@ function FinDeCombat() {
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
-        GenerationMonstre()
+        GenerationMonstre(player.Etape)
     } else if (monster.Pv <= 0) {
         player.Gold += monster.Gold;
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
-        GenerationMonstre()
+        GenerationMonstre(player.Etape)
     }
 }
 
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
-function GenerationMonstre() {
+function GenerationMonstre(etape) {
     if (player.Pv <= 0) {
+        player.Etape = 0;
         monster = new Monster("Glout");
-    } else if (monster.Type == "Glout") {
+    } else if (etape == 0) {
+        player.Etape += 1;
         monster = new Monster("Groco");
-    } else if (monster.Type == "Groco") {
+    } else if (etape == 1) {
+        player.Etape += 1;
         monster = new Monster("Tankse");
-    } else if (monster.Type == "Tankse") {
+    } else if (etape == 2) {
+        player.Etape += 1;
         monster = new Monster("Noxpul");
     }
 }
