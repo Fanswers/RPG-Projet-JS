@@ -11,17 +11,17 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-    <div>
-        <button id="start">Commencer</button>
-    </div>
+  <div class="cacher">
+    <button id="start">Commencer</button>
+  </div>
 
-    <div>
-        <form id="formSave" class="cacher">
-            <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
-            <button id="loadSave">Charger la partie</button>
-            <button id="newGame">Nouvelle partie</button>
-        </form>
-    </div>
+  <div>
+    <form id="formSave" class="cacher">
+      <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+      <button id="loadSave">Charger la partie</button>
+      <button id="newGame">Nouvelle partie</button>
+    </form>
+  </div>
 
   <form id="playerForm" class="cacher">
     <p id="pseudo">
@@ -54,7 +54,7 @@
 
   <!-- Ecran avant un combat, accès au magasin possible -->
 
-  <div id="entre2Combat" class="cacher">
+  <div id="entre2Combat">
     <button id="newCombat">Attaquer</button>
     <button id="shop">Magasin</button>
   </div>

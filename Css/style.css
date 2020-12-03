@@ -3,7 +3,7 @@ body {
 }
 
 .cacher {
-  visibility: hidden;
+  display: none;
 }
 
 #playerForm {
@@ -89,4 +89,10 @@ body {
   position: absolute;
   margin-top: 43%;
   margin-left: 70%;
+}
+
+#entre2Combat {
+  margin: 0 auto;
+  margin-top: 30%;
+  margin-left: 45%;
 }
