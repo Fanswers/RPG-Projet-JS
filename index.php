@@ -11,7 +11,19 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-  <form id="playerForm">
+    <div>
+        <button id="start">Commencer</button>
+    </div>
+
+    <div>
+        <form id="formSave" class="cacher">
+            <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+            <button id="loadSave">Charger la partie</button>
+            <button id="newGame">Nouvelle partie</button>
+        </form>
+    </div>
+
+  <form id="playerForm" class="cacher">
     <p id="pseudo">
       <input type="text" name="name" id="playerName" placeholder="Entrez votre pseudo">
     </p>
