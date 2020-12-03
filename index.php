@@ -11,7 +11,7 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-  <div class="cacher">
+  <div>
     <button id="start">Commencer</button>
   </div>
 
@@ -54,7 +54,7 @@
 
   <!-- Ecran avant un combat, accès au magasin possible -->
 
-  <div id="entre2Combat">
+  <div id="entre2Combat" class="cacher">
     <button id="newCombat">Attaquer</button>
     <button id="shop">Magasin</button>
   </div>
@@ -89,11 +89,11 @@
     <button id="attaque4Archer" value="Position de défense">Position de défense</button>
   </div>
 
-    <!-- Ecran des données du joueur -->
-    <div id="fightPlayerData" class="cacher">   
-        <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
-        <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
-    </div>
+  <!-- Ecran des données du joueur -->
+  <div id="fightPlayerData" class="cacher">
+    <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
+    <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+  </div>
 
   <!-- Ecran lors de la victoire d'un combat -->
   <div id="victoireCombat" class="cacher">
