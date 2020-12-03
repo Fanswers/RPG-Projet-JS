@@ -57,6 +57,8 @@ $("#loadSave").click(function (e){
     player.Etape = parseInt(dataArray[12]);
     GenerationMonstre(player.Etape);
     $("#entre2Combat").toggleClass("cacher");
+    $("#fightPlayerData").toggleClass("cacher");
+    refreshPlayerData();
 })
 
 $('#sendPlayer').click(function (e) {
@@ -71,7 +73,10 @@ $('#sendPlayer').click(function (e) {
     })
     $("#playerForm").toggleClass("cacher");
     $("#entre2Combat").toggleClass("cacher");
+    $("#fightPlayerData").toggleClass("cacher");
+    refreshPlayerData();
 });
+
 
 
 // Fonction de lancement de combat au clique du bouton concerné
@@ -84,6 +89,7 @@ $("#newCombat").click(function () {
 
 // Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.
 function FinDeCombat() {
+    refreshPlayerData();
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
@@ -216,5 +222,10 @@ $("#attaque4Warrior").click(function () {
     FinDeCombat()
 })
 
-
+function refreshPlayerData(){
+    $("#pv").text(player.Pv);
+    $("#pm").text(player.Pm);
+    $("#pvMax").text(player.PvMax);
+    $("#pmMax").text(player.PmMax);
+}
 
