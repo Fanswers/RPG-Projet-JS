@@ -146,25 +146,28 @@ $("#nouvellePartie").click(function () {
 // Fonction au clique du bouton qui lance l'attaque séléctionnée du Warrior 
 $("#attaque1Warrior").click(function () {
     if (player.Vitesse > monster.Vitesse) {
-        console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+        $("#messages").append(`<p>Vous lancez ${$("#attaque1" + player.Type).val()} !</p>`);
         monster.Pv -= player.Attaque;
-        console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+        $("#messages").append(`<p>Le monstre a perdu ${player.Attaque} points de vie !</p>`);
         if (monster.Pv > 0) {
-            console.log("Le monstre vous attaque !");
+            $("#messages").append(`<p>Le monstre vous attaque !</p>`);
             player.Pv -= monster.Attaque;
-            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
         }
     } else {
-        console.log("Le monstre vous attaque !");
+        $("#messages").append(`<p>Le monstre vous attaque !</p>`);
         player.Pv -= monster.Attaque;
-        console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+        $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
         if (player.Pv > 0) {
-            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            $("#messages").append(`<p>Vous lancez ${$("#attaque1" + player.Type).val()} !</p>`);
             monster.Pv -= player.Attaque;
-            console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+            $("#messages").append(`<p>Le monstre a perdu ${player.Attaque} point de vie !</p>`);
         }
     }
-    $("#messages").append(`<p>Le monstre a perdu ${player.Attaque} points de vie !</p>`)
+    $("#messages").append(`<p>------------------------------------</p>`)
+    $("#messages" + player.Type).toggleClass("cacher");
+    $("#messages" + player.Type).toggleClass("cacher");
+
     FinDeCombat()
 })
 
@@ -172,27 +175,32 @@ $("#attaque2Warrior").click(function () {
     if (player.Pm > 3) {
         player.Pm -= 3;
         if (player.Vitesse > monster.Vitesse) {
-            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+            $("#messages").append(`<p>Vous avez perdu 3 pm !</p>`);
             monster.Pv -= player.Attaque * 1.5;
-            console.log("Le monstre a perdu " + (player.Attaque * 1.5) + " points de vie !");
+            $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 1.5} points de vie !</p>`);
             if (monster.Pv > 0) {
-                console.log("Le monstre vous attaque !");
+                $("#messages").append(`<p>Le monstre vous attaque !</p>`);
                 player.Pv -= monster.Attaque;
-                console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+                $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             }
         } else {
-            console.log("Le monstre vous attaque !");
+            $("#messages").append(`<p>Le monstre vous attaque !</p>`);
             player.Pv -= monster.Attaque;
-            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             if (player.Pv > 0) {
-                console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+                $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+                $("#messages").append(`<p>Vous avez perdu 3 pm !</p>`);
                 monster.Pv -= player.Attaque * 1.5;
-                console.log("Le monstre a perdu " + (player.Attaque * 1.5) + " points de vie !");
+                $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 1.5} points de vie !</p>`);
             }
         }
     } else {
-        console.log("Vous n'avez pas assez de mana");
+        $("#messages").append(`<p>Vous n'avez pas assez de pm !</p>`);
     }
+    $("#messages").append(`<p>------------------------------------</p>`)
+    $("#messages" + player.Type).toggleClass("cacher");
+    $("#messages" + player.Type).toggleClass("cacher");
     FinDeCombat()
 })
 
@@ -200,38 +208,48 @@ $("#attaque3Warrior").click(function () {
     if (player.Pm > 6) {
         player.Pm -= 6;
         if (player.Vitesse > monster.Vitesse) {
-            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+            $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
             monster.Pv -= player.Attaque * 2;
-            console.log("Le monstre a perdu " + (player.Attaque * 2) + " points de vie !");
+            $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
             if (monster.Pv > 0) {
-                console.log("Le monstre vous attaque !");
+                $("#messages").append(`<p>Le monstre vous attaque !</p>`);
                 player.Pv -= monster.Attaque;
-                console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+                $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             }
         } else {
-            console.log("Le monstre vous attaque !");
+            $("#messages").append(`<p>Le monstre vous attaque !</p>`);
             player.Pv -= monster.Attaque;
-            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             if (player.Pv > 0) {
-                console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+                $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+                $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
                 monster.Pv -= player.Attaque * 3;
-                console.log("Le monstre a perdu " + (player.Attaque * 2) + " points de vie !");
+                $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
             }
         }
     } else {
-        console.log("Vous n'avez pas assez de mana");
+        $("#messages").append(`<p>Vous n'avez pas assez de pm !</p>`);
     }
+    $("#messages").append(`<p>------------------------------------</p>`)
+    $("#messages" + player.Type).toggleClass("cacher");
+    $("#messages" + player.Type).toggleClass("cacher");
     FinDeCombat()
 })
 
 $("#attaque4Warrior").click(function () {
     if (monster.Attaque > player.Defense) {
+        $("#messages").append(`<p>Vous vous mettez en position défensive.</p>`);
         player.Pv -= monster.Attaque - player.Defense;
-        console.log("Vous avez perdu " + (monster.Attaque - player.Defense) + " points de vie !");
+        $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque - player.Defense} points de vie !</p>`);
     } else {
+        $("#messages").append(`<p>Vous vous mettez en position défensive.</p>`);
         player.Pv -= 0;
-        console.log("Vous avez perdu " + 0 + " points de vie !");
+        $("#messages").append(`<p>Vous avez perdu 0 point de vie.</p>`);
     }
+    $("#messages").append(`<p>------------------------------------</p>`)
+    $("#messages" + player.Type).toggleClass("cacher");
+    $("#messages" + player.Type).toggleClass("cacher");
     FinDeCombat()
 })
 
@@ -240,33 +258,4 @@ function refreshPlayerData() {
     $("#pm").text(player.Pm);
     $("#pvMax").text(player.PvMax);
     $("#pmMax").text(player.PmMax);
-}
-
-
-function getMessages() {
-    exp = $("[name=exp]").val();
-    dest = $("[name=dest]").val();
-    $("#messages").html("");
-    $.ajax({
-        url: "message.php",
-        data: {
-            exp,
-            dest,
-            function: "getMessages"
-        },
-        dataType: "json",
-        success: function (response) {
-            response.forEach(message => {
-                let classe;
-                if (message.exp == exp) {
-                    classe = "green";
-                } else {
-                    classe = "grey";
-                }
-                $("#messages").append(`
-                    <p>${message.content}</p>
-                `)
-            });
-        }
-    })
 }
