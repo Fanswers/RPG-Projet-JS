@@ -28,6 +28,13 @@
         </p>
         <button id="sendPlayer">Jouer</button>
     </form>
+    <div>
+        <form id="formSave" class="cacher">
+            <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+            <button id="loadSave">Charger la partie</button>
+            <button id="newGame">Nouvelle partie</button>
+        </form>
+    </div>
     <div id="formDiv" class="cacher">
         <h1>Nouvelle partie</h1>
         <form id="playerForm">
