@@ -40,7 +40,7 @@ $("#newGame").click(function (e) {
     $("#playerForm").toggleClass("cacher");
 })
 
-$("#loadSave").click(function (e){
+$("#loadSave").click(function (e) {
     e.preventDefault();
     $("#formSave").toggleClass("cacher");
     player = new Personnage(dataArray[0], dataArray[1])
@@ -57,6 +57,8 @@ $("#loadSave").click(function (e){
     player.Etape = parseInt(dataArray[12]);
     GenerationMonstre(player.Etape);
     $("#entre2Combat").toggleClass("cacher");
+    $("#imgMonster").toggleClass(monster.Type);
+    $("#imgPlayer").toggleClass(player.Type);
 })
 
 $('#sendPlayer').click(function (e) {
@@ -71,6 +73,8 @@ $('#sendPlayer').click(function (e) {
     })
     $("#playerForm").toggleClass("cacher");
     $("#entre2Combat").toggleClass("cacher");
+    $("#imgMonster").toggleClass(monster.Type);
+    $("#imgPlayer").toggleClass(player.Type);
 });
 
 
