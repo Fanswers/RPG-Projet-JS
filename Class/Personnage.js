@@ -1,8 +1,8 @@
 import { Entity } from './Entity.js';
 
 export class Personnage extends Entity {
-    constructor(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold) {
-        super(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold);
+    constructor(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold, Etape) {
+        super(Type, Name, Pv, PvMax, Defense, Vitesse, Esquive, Attaque, Pm, PmMax, Crit, Gold, Etape);
         switch (Type) {
             case "Warrior":
                 this.Pv = 140;
@@ -15,6 +15,7 @@ export class Personnage extends Entity {
                 this.PmMax = 10;
                 this.Crit = 5;
                 this.Gold = 0;
+                this.Etape = 0;
                 break;
 
             case "Mage":
@@ -28,6 +29,7 @@ export class Personnage extends Entity {
                 this.PmMax = 10;
                 this.Crit = 5;
                 this.Gold = 0;
+                this.Etape = 0;
                 break;
 
             case "Rogue":
@@ -41,6 +43,7 @@ export class Personnage extends Entity {
                 this.PmMax = 10;
                 this.Crit = 5;
                 this.Gold = 0;
+                this.Etape = 0;
                 break;
 
             case "Archer":
@@ -54,6 +57,7 @@ export class Personnage extends Entity {
                 this.PmMax = 10;
                 this.Crit = 5;
                 this.Gold = 0;
+                this.Etape = 0;
                 break;
         }
     }
