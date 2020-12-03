@@ -164,6 +164,7 @@ $("#attaque1Warrior").click(function () {
             console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
         }
     }
+    $("#messages").append(`<p>Le monstre a perdu ${player.Attaque} points de vie !</p>`)
     FinDeCombat()
 })
 
@@ -241,3 +242,31 @@ function refreshPlayerData() {
     $("#pmMax").text(player.PmMax);
 }
 
+
+function getMessages() {
+    exp = $("[name=exp]").val();
+    dest = $("[name=dest]").val();
+    $("#messages").html("");
+    $.ajax({
+        url: "message.php",
+        data: {
+            exp,
+            dest,
+            function: "getMessages"
+        },
+        dataType: "json",
+        success: function (response) {
+            response.forEach(message => {
+                let classe;
+                if (message.exp == exp) {
+                    classe = "green";
+                } else {
+                    classe = "grey";
+                }
+                $("#messages").append(`
+                    <p>${message.content}</p>
+                `)
+            });
+        }
+    })
+}
