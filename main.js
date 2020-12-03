@@ -2,7 +2,7 @@ import { Personnage } from './Class/Personnage.js';
 import { Monster } from './Class/Monster.js';
 
 // Initialisation d'une variable player et monster hors fonction pour pouvoir les récupérer n'importe ou
-let player;
+let player = new Personnage("Warrior");
 let monster;
 let datastring;
 let playerInfo;
@@ -10,7 +10,6 @@ let playerInfo;
 $("#start").click(function () {
     $("#start").toggleClass("cacher");
     $("#formSave").toggleClass("cacher");
-    console.log("yes");
     $.ajax({
         type: 'get',
         url: 'getPlayer.php',
@@ -20,7 +19,7 @@ $("#start").click(function () {
                 choose(data)
             }
             else {
-                createPlayer()
+                $("#loadSave").toggleClass("cacher");
             }
         }
     })
@@ -28,9 +27,9 @@ $("#start").click(function () {
 
 function choose(data) {
     data = data.replace(/["']/g, "");
-    var array = data.split(",");
-    $("#savedName").text(array[1]);
-    $("#savedType").text(array[0]);
+    dataArray = data.split(",");
+    $("#savedName").text(dataArray[1]);
+    $("#savedType").text(dataArray[0]);
 }
 
 $("#newGame").click(function (e) {
