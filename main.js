@@ -55,7 +55,7 @@ $("#loadSave").click(function (e) {
     player.Crit = parseInt(dataArray[10]);
     player.Gold = parseInt(dataArray[11]);
     player.Etape = parseInt(dataArray[12]);
-    GenerationMonstre(player.Etape);
+    GenerationMonstre();
     $("#entre2Combat").toggleClass("cacher");
     $("#fightPlayerData").toggleClass("cacher");
     $("#imgMonster").toggleClass(monster.Type);
@@ -67,7 +67,7 @@ $('#sendPlayer').click(function (e) {
     e.preventDefault();
     playerInfo = $('#playerForm').serializeArray();
     player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value']);
-    GenerationMonstre(player.Etape);
+    GenerationMonstre();
     $.ajax({
         url: 'savePlayer.php',
         method: 'POST',
@@ -97,29 +97,37 @@ function FinDeCombat() {
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
-        GenerationMonstre(player.Etape)
+        GenerationMonstre()
     } else if (monster.Pv <= 0) {
         player.Gold += monster.Gold;
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
-        GenerationMonstre(player.Etape)
+        GenerationMonstre()
     }
 }
 
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
-function GenerationMonstre(etape) {
+function GenerationMonstre() {
     if (player.Pv <= 0) {
-        player.Etape = 0;
+        player.Etape = 1;
         monster = new Monster("Glout");
-    } else if (etape == 0) {
+        console.log(player.Etape)
+    } else if (player.Etape == 0) {
+        player.Etape += 1;
+        monster = new Monster("Glout");
+        console.log(player.Etape)
+    } else if (player.Etape == 1) {
         player.Etape += 1;
         monster = new Monster("Groco");
-    } else if (etape == 1) {
+        $("#imgMonster").toggleClass(monster.Type);
+    } else if (player.Etape == 2) {
         player.Etape += 1;
         monster = new Monster("Tankse");
-    } else if (etape == 2) {
+        $("#imgMonster").toggleClass(monster.Type);
+    } else if (player.Etape == 3) {
         player.Etape += 1;
         monster = new Monster("Noxpul");
+        $("#imgMonster").toggleClass(monster.Type);
     }
 }
 
