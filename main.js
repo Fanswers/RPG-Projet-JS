@@ -53,22 +53,6 @@ $('#sendPlayer').click(function (e) {
     $("#entre2Combat").toggleClass("cacher");
 });
 
-//Recupération des données du formulaire
-// $("#sendPlayer").click(function (e) {
-//     e.preventDefault();
-//     playerInfo = $("#playerForm").serializeArray();
-//     game(playerInfo);
-// })
-
-function game(playerInfo) {
-    //Creation du joueur
-    // player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value'])
-    monster = new Monster("Glout");
-    console.log(player.Type);
-    console.log(player.Name);
-    $("#playerForm").toggleClass("cacher");
-    $("#entre2Combat").toggleClass("cacher");
-}
 
 // Fonction de lancement de combat au clique du bouton concerné
 $("#newCombat").click(function () {
