@@ -12,22 +12,32 @@
 
 <body>
   <form id="playerForm">
-    <p>
+    <p id="pseudo">
       Pseudo
       <input type="text" name="name" id="playerName">
     </p>
-    <P>
-      <input type="radio" name="class" value="Warrior"> Warrior
-    </p>
-    <P>
-      <input type="radio" name="class" value="Mage"> Mage
-    </p>
-    <P>
-      <input type="radio" name="class" value="Rogue"> Rogue
-    </p>
-    <P>
-      <input type="radio" name="class" value="Archer"> Archer
-    </p>
+    <div id="choiceClassAll">
+      <div id=imgClass>
+        <div class="img W"></div>
+        <div class="img M"></div>
+        <div class="img R"></div>
+        <div class="img A"></div>
+      </div>
+      <div id="choiceClass">
+        <P>
+          <input type="radio" name="class" value="Warrior" class="choiceClass1"> Warrior
+        </p>
+        <P>
+          <input type="radio" name="class" value="Mage" class="choiceClass"> Mage
+        </p>
+        <P>
+          <input type="radio" name="class" value="Rogue" class="choiceClass"> Rogue
+        </p>
+        <P>
+          <input type="radio" name="class" value="Archer" class="choiceClass"> Archer
+        </p>
+      </div>
+    </div>
     <button id="sendPlayer">Jouer</button>
   </form>
 

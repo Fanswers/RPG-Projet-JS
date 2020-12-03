@@ -19,9 +19,7 @@ function game(playerInfo) {
     console.log(player.Type);
     console.log(player.Name);
     $("#playerForm").toggleClass("cacher");
-    console.log("ça commence");
     $("#entre2Combat").toggleClass("cacher");
-    console.log("C'est bon");
 }
 
 // Fonction de lancement de combat au clique du bouton concerné
