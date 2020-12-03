@@ -9,25 +9,9 @@
 </head>
 
 <body>
-    <form id="playerForm">
-        <p>
-            Pseudo
-            <input type="text" name="name" id="playerName">
-        </p>
-        <P>
-            <input type="radio" name="class" value="Warrior"> Warrior
-        </p>
-        <P>
-            <input type="radio" name="class" value="Mage"> Mage
-        </p>
-        <P>
-            <input type="radio" name="class" value="Rogue"> Rogue
-        </p>
-        <P>
-            <input type="radio" name="class" value="Archer"> Archer
-        </p>
-        <button id="sendPlayer">Jouer</button>
-    </form>
+    <div>
+        <button id="start">Commencer</button>
+    </div>
     <div>
         <form id="formSave" class="cacher">
             <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
