@@ -3,7 +3,7 @@ body {
 }
 
 .cacher {
-  visibility: hidden;
+  display: none;
 }
 
 #playerForm {
