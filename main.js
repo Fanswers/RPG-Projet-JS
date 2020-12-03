@@ -2,7 +2,8 @@ import { Personnage } from './Class/Personnage.js';
 import { Monster } from './Class/Monster.js';
 
 // Initialisation d'une variable player et monster hors fonction pour pouvoir les récupérer n'importe ou
-let player;
+
+let player = new Personnage("Warrior");
 let monster;
 let datastring;
 let playerInfo;
@@ -37,6 +38,25 @@ $("#newGame").click(function (e) {
     e.preventDefault();
     $("#formSave").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
+})
+
+$("#loadSave").click(function (e) {
+    e.preventDefault();
+    $("#formSave").toggleClass("cacher");
+    player = new Personnage(dataArray[0], dataArray[1])
+    player.Pv = parseInt(dataArray[2]);
+    player.PvMax = parseInt(dataArray[3]);
+    player.Defense = parseInt(dataArray[4]);
+    player.Vitesse = parseInt(dataArray[5]);
+    player.Esquive = parseInt(dataArray[6]);
+    player.Attaque = parseInt(dataArray[7]);
+    player.Pm = parseInt(dataArray[8]);
+    player.PmMax = parseInt(dataArray[9]);
+    player.Crit = parseInt(dataArray[10]);
+    player.Gold = parseInt(dataArray[11]);
+    player.Etape = parseInt(dataArray[12]);
+    GenerationMonstre(player.Etape);
+    $("#entre2Combat").toggleClass("cacher");
 })
 
 $('#sendPlayer').click(function (e) {

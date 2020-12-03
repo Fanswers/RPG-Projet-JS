@@ -11,7 +11,7 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-  <div class="cacher">
+  <div>
     <button id="start">Commencer</button>
   </div>
 
