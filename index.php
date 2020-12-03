@@ -11,7 +11,7 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-  <div class="cacher">
+  <div>
     <button id="start">Commencer</button>
   </div>
 
@@ -54,7 +54,7 @@
 
   <!-- Ecran avant un combat, accès au magasin possible -->
 
-  <div id="entre2Combat">
+  <div id="entre2Combat" class="cacher">
     <button id="newCombat">Attaquer</button>
     <button id="shop">Magasin</button>
   </div>
