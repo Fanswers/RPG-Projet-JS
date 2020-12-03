@@ -16,7 +16,7 @@
   </div>
 
   <div>
-    <form id="formSave" class="cacher">
+    <form id="formSave">
       <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
       <button id="loadSave">Charger la partie</button>
       <button id="newGame">Nouvelle partie</button>
@@ -54,7 +54,9 @@
 
   <!-- Ecran avant un combat, accès au magasin possible -->
 
-  <div id="entre2Combat">
+  <div id="entre2Combat" class="cacher">
+    <div id="imgMonster" class="IMG monster"></div>
+    <div id="imgPlayer" class="IMG player"></div>
     <button id="newCombat">Attaquer</button>
     <button id="shop">Magasin</button>
   </div>

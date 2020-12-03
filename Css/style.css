@@ -93,6 +93,75 @@ body {
 
 #entre2Combat {
   margin: 0 auto;
-  margin-top: 30%;
+  margin-top: 10%;
   margin-left: 45%;
+}
+
+.IMG {
+  height: 200px;
+  width: 140px;
+  border: solid 1px black;
+}
+
+.Warrior {
+  background-image: url(../img/WarriorIMG.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 101% 101%;
+}
+
+.Mage {
+  background-image: url(../img/MageIMG.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 101% 101%;
+}
+
+.Royal {
+  background-image: url(../img/RogueIMG.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 101% 101%;
+}
+
+.Archer {
+  background-image: url(../img/ArcherIMG.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 103% 118%;
+}
+
+.Glout {
+  background-image: url(../img/Glout.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 103% 118%;
+}
+
+.Groco {
+  background-image: url(../img/Groco.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 103% 118%;
+}
+
+.Tankse {
+  background-image: url(../img/Tankse2.webp);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 103% 118%;
+}
+.Noxpul {
+  background-image: url(../img/Noxpul.jpg);
+  background-repeat: no-repeat;
+  max-height: 100%;
+  max-width: 100%;
+  background-size: 103% 118%;
 }

@@ -51,6 +51,8 @@ $('#sendPlayer').click(function (e) {
     })
     $("#playerForm").toggleClass("cacher");
     $("#entre2Combat").toggleClass("cacher");
+    $("#imgMonster").toggleClass(monster.Type);
+    $("#imgPlayer").toggleClass(player.Type);
 });
 
 
@@ -191,6 +193,3 @@ $("#attaque4Warrior").click(function () {
     }
     FinDeCombat()
 })
-
-
-
