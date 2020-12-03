@@ -55,6 +55,8 @@
   <!-- Ecran avant un combat, accès au magasin possible -->
 
   <div id="entre2Combat" class="cacher">
+    <div id="imgMonster" class="IMG monster"></div>
+    <div id="imgPlayer" class="IMG player"></div>
     <button id="newCombat">Attaquer</button>
     <button id="shop">Magasin</button>
   </div>
