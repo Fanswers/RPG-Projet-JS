@@ -1,8 +1,10 @@
 import { Personnage } from './Class/Personnage.js'
 import { Monster } from './Class/Monster.js'
 
+// Initialisation d'une variable player et monster hors fonction pour pouvoir les récupérer n'importe ou
 let player;
 let monster;
+
 //Recupération des données du formulaire
 $("#sendPlayer").click(function (e) {
     e.preventDefault();
@@ -17,49 +19,14 @@ function game(playerInfo) {
     console.log(player.Type);
     console.log(player.Name);
     $("#playerForm").toggleClass("cacher");
+    console.log("ça commence");
     $("#entre2Combat").toggleClass("cacher");
-}
-
-function Combat(prsng, mnstr) {
-    console.log(prsng.Attaque);
-    console.log(mnstr.Attaque);
-    while (mnstr.Pv > 0 && prsng.Pv > 0) {
-        let choix;
-        switch (choix) {
-            case "1":
-                if (prsng.Vitesse > mnstr.Vitesse) {
-                    mnstr.Pv -= prsng.Attaque;
-                    if (mnstr.Pv > 0) {
-                        prsng.Pv -= mnstr.Attaque;
-                    }
-                } else {
-                    prsng.Pv -= mnstr.Attaque;
-                    if (prsng.Pv > 0) {
-                        mnstr.Pv -= prsng.Attaque;
-                    }
-                }
-                break;
-            case "2":
-                console.log(prsng.Pv);
-                prsng.Pv -= mnstr.Attaque - prsng.Defense / 2;
-                console.log(prsng.Pv);
-                break;
-        }
-        if (mnstr.Pv <= 0 && prsng.Pv > 0) {
-            console.log(prsng.Gold);
-            prsng.Gold += mnstr.Gold;
-            console.log(prsng.Gold);
-            console.log("Vous avez gagné !");
-        } else if (mnstr.Pv > 0 && prsng.Pv <= 0) {
-            console.log("Vous avez perdu !");
-        }
-    }
+    console.log("C'est bon");
 }
 
 // Fonction de lancement de combat au clique du bouton concerné
 $("#newCombat").click(function () {
-    $("#newCombat").toggleClass("cacher");
-    $("#shop").toggleClass("cacher");
+    $("#entre2Combat").toggleClass("cacher");
     $("#estEnCombat").toggleClass("cacher");
 })
 
@@ -114,8 +81,14 @@ function GenerationMonstre() {
     }
 }
 
+// Terminer la fin d'un combat retour a l'accès du shop et au lancement d'un nouveau combat
 $("#terminerCombat").click(function () {
-    $("#newCombat").toggleClass("cacher");
-    $("#shop").toggleClass("cacher");
+    $("#entre2Combat").toggleClass("cacher");
     $("#victoireCombat").toggleClass("cacher");
+})
+
+// Fin de partie suite a la défaite du player, possibilité de lancer une nouvelle partie
+$("#nouvellePartie").click(function () {
+    $("#defaiteCombat").toggleClass("cacher");
+    $("#playerForm").toggleClass("cacher");
 })
