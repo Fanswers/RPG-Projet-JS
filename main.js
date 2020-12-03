@@ -22,12 +22,26 @@ $("#start").click(function(){
         }
     })
 });
-    e.preventDefault();
-    let playerInfo = $("#playerForm").serializeArray();
-    game(playerInfo)
-})
 
-function game(playerInfo){
-    //Creation du joueur
-    let player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value']) 
+function choose(data){
+    data = data.replace(/["']/g, "");
+    var array = data.split(",");
+    $("#savedName").text(array[1]);
+    $("#savedType").text(array[0]);
 }
+
+$("#newGame").click(function(e){
+    e.preventDefault();
+    $("#formSave").toggleClass("cacher");
+    $("#formDiv").toggleClass("cacher");
+    $('#sendPlayer').click(function (e) {
+    e.preventDefault();
+    let playerInfo = $('#playerForm').serializeArray();
+    let player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value']);
+    $.ajax({
+        url: 'savePlayer.php',
+        method: 'POST',
+        data: player
+    })
+});
+})
