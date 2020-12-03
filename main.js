@@ -1,36 +1,30 @@
 import { Personnage } from './Class/Personnage.js'
 import { Monster } from './Class/Monster.js'
 
-let lancement = document.querySelector("#playerForm");
-
-function Game() {
-    let pers = new Personnage("Warrior");
-    let mons = new Monster("Glout");
-    Combat(pers, mons);
-}
-
+let player;
+let monster;
 //Recupération des données du formulaire
 $("#sendPlayer").click(function (e) {
     e.preventDefault();
     let playerInfo = $("#playerForm").serializeArray();
-    game(playerInfo)
+    game(playerInfo);
 })
 
 function game(playerInfo) {
     //Creation du joueur
-    let player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value'])
-    let mons = new Monster("Glout");
+    player = new Personnage(playerInfo[1]['value'], playerInfo[0]['value'])
+    monster = new Monster("Glout");
     console.log(player.Type);
     console.log(player.Name);
     $("#playerForm").toggleClass("cacher");
-    Combat(player, mons);
+    $("#entre2Combat").toggleClass("cacher");
 }
 
 function Combat(prsng, mnstr) {
     console.log(prsng.Attaque);
     console.log(mnstr.Attaque);
     while (mnstr.Pv > 0 && prsng.Pv > 0) {
-        let choix = "1"
+        let choix;
         switch (choix) {
             case "1":
                 if (prsng.Vitesse > mnstr.Vitesse) {
@@ -62,6 +56,66 @@ function Combat(prsng, mnstr) {
     }
 }
 
-$("#playerForm").append(`
-<form class='cacher'></form>
-`)
+// Fonction de lancement de combat au clique du bouton concerné
+$("#newCombat").click(function () {
+    $("#newCombat").toggleClass("cacher");
+    $("#shop").toggleClass("cacher");
+    $("#estEnCombat").toggleClass("cacher");
+})
+
+// Fonction au clique du bouton qui lance l'attaque séléctionnée 
+$("#attaque1").click(function () {
+    if (player.Vitesse > monster.Vitesse) {
+        console.log("Vous lancez " + $("#attaque1").value + " !");
+        monster.Pv -= player.Attaque;
+        console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+        if (monster.Pv > 0) {
+            console.log("Le monstre vous attaque !");
+            player.Pv -= monster.Attaque;
+            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+        }
+    } else {
+        console.log("Le monstre vous attaque !");
+        player.Pv -= monster.Attaque;
+        console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+        if (player.Pv > 0) {
+            console.log("Vous lancez " + $("#attaque1").value + " !");
+            monster.Pv -= player.Attaque;
+            console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+        }
+    }
+    FinDeCombat()
+})
+
+// Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.
+function FinDeCombat() {
+    if (player.Pv <= 0) {
+        $("#estEnCombat").toggleClass("cacher");
+        $("#defaiteCombat").toggleClass("cacher");
+        GenerationMonstre()
+    } else if (monster.Pv <= 0) {
+        player.Gold += monster.Gold;
+        $("#estEnCombat").toggleClass("cacher");
+        $("#victoireCombat").toggleClass("cacher");
+        GenerationMonstre()
+    }
+}
+
+// Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
+function GenerationMonstre() {
+    if (player.Pv <= 0) {
+        monster = new Monster("Glout");
+    } else if (monster.Type == "Glout") {
+        monster = new Monster("Groco");
+    } else if (monster.Type == "Groco") {
+        monster = new Monster("Tankse");
+    } else if (monster.Type == "Tankse") {
+        monster = new Monster("Noxpul");
+    }
+}
+
+$("#terminerCombat").click(function () {
+    $("#newCombat").toggleClass("cacher");
+    $("#shop").toggleClass("cacher");
+    $("#victoireCombat").toggleClass("cacher");
+})
