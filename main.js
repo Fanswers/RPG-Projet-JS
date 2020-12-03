@@ -5,6 +5,7 @@ import { Monster } from './Class/Monster.js'
 let player;
 let monster;
 
+
 //Recupération des données du formulaire
 $("#sendPlayer").click(function (e) {
     e.preventDefault();
@@ -25,42 +26,20 @@ function game(playerInfo) {
 // Fonction de lancement de combat au clique du bouton concerné
 $("#newCombat").click(function () {
     $("#entre2Combat").toggleClass("cacher");
-    $("#estEnCombat").toggleClass("cacher");
+    $("#estEnCombat" + player.Type).toggleClass("cacher");
 })
 
-// Fonction au clique du bouton qui lance l'attaque séléctionnée 
-$("#attaque1").click(function () {
-    if (player.Vitesse > monster.Vitesse) {
-        console.log("Vous lancez " + $("#attaque1").value + " !");
-        monster.Pv -= player.Attaque;
-        console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
-        if (monster.Pv > 0) {
-            console.log("Le monstre vous attaque !");
-            player.Pv -= monster.Attaque;
-            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
-        }
-    } else {
-        console.log("Le monstre vous attaque !");
-        player.Pv -= monster.Attaque;
-        console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
-        if (player.Pv > 0) {
-            console.log("Vous lancez " + $("#attaque1").value + " !");
-            monster.Pv -= player.Attaque;
-            console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
-        }
-    }
-    FinDeCombat()
-})
+
 
 // Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.
 function FinDeCombat() {
     if (player.Pv <= 0) {
-        $("#estEnCombat").toggleClass("cacher");
+        $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
         GenerationMonstre()
     } else if (monster.Pv <= 0) {
         player.Gold += monster.Gold;
-        $("#estEnCombat").toggleClass("cacher");
+        $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
         GenerationMonstre()
     }
@@ -90,3 +69,95 @@ $("#nouvellePartie").click(function () {
     $("#defaiteCombat").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
 })
+
+// Fonction au clique du bouton qui lance l'attaque séléctionnée du Warrior 
+$("#attaque1Warrior").click(function () {
+    if (player.Vitesse > monster.Vitesse) {
+        console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+        monster.Pv -= player.Attaque;
+        console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+        if (monster.Pv > 0) {
+            console.log("Le monstre vous attaque !");
+            player.Pv -= monster.Attaque;
+            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+        }
+    } else {
+        console.log("Le monstre vous attaque !");
+        player.Pv -= monster.Attaque;
+        console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+        if (player.Pv > 0) {
+            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            monster.Pv -= player.Attaque;
+            console.log("Le monstre a perdu " + player.Attaque + " points de vie !");
+        }
+    }
+    FinDeCombat()
+})
+
+$("#attaque2Warrior").click(function () {
+    if (player.Pm > 3) {
+        player.Pm -= 3;
+        if (player.Vitesse > monster.Vitesse) {
+            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            monster.Pv -= player.Attaque * 1.5;
+            console.log("Le monstre a perdu " + (player.Attaque * 1.5) + " points de vie !");
+            if (monster.Pv > 0) {
+                console.log("Le monstre vous attaque !");
+                player.Pv -= monster.Attaque;
+                console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            }
+        } else {
+            console.log("Le monstre vous attaque !");
+            player.Pv -= monster.Attaque;
+            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            if (player.Pv > 0) {
+                console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+                monster.Pv -= player.Attaque * 1.5;
+                console.log("Le monstre a perdu " + (player.Attaque * 1.5) + " points de vie !");
+            }
+        }
+    } else {
+        console.log("Vous n'avez pas assez de mana");
+    }
+    FinDeCombat()
+})
+
+$("#attaque3Warrior").click(function () {
+    if (player.Pm > 6) {
+        player.Pm -= 6;
+        if (player.Vitesse > monster.Vitesse) {
+            console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+            monster.Pv -= player.Attaque * 2;
+            console.log("Le monstre a perdu " + (player.Attaque * 2) + " points de vie !");
+            if (monster.Pv > 0) {
+                console.log("Le monstre vous attaque !");
+                player.Pv -= monster.Attaque;
+                console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            }
+        } else {
+            console.log("Le monstre vous attaque !");
+            player.Pv -= monster.Attaque;
+            console.log("Vous avez perdu " + monster.Attaque + " points de vie !");
+            if (player.Pv > 0) {
+                console.log("Vous lancez " + $("#attaque1" + player.Type).val() + " !");
+                monster.Pv -= player.Attaque * 3;
+                console.log("Le monstre a perdu " + (player.Attaque * 2) + " points de vie !");
+            }
+        }
+    } else {
+        console.log("Vous n'avez pas assez de mana");
+    }
+    FinDeCombat()
+})
+
+$("#attaque4Warrior").click(function () {
+    if (monster.Attaque > player.Defense) {
+        player.Pv -= monster.Attaque - player.Defense;
+        console.log("Vous avez perdu " + (monster.Attaque - player.Defense) + " points de vie !");
+    } else {
+        player.Pv -= 0;
+        console.log("Vous avez perdu " + 0 + " points de vie !");
+    }
+    FinDeCombat()
+})
+

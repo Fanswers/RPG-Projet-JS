@@ -13,8 +13,7 @@
 <body>
   <form id="playerForm">
     <p id="pseudo">
-      Pseudo
-      <input type="text" name="name" id="playerName">
+      <input type="text" name="name" id="playerName" placeholder="Entrez votre pseudo">
     </p>
     <div id="choiceClassAll">
       <div id=imgClass>
@@ -50,10 +49,32 @@
 
   <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
 
-  <div id="estEnCombat" class="cacher">
-    <button id="attaque1" value="Boule de feu">Boule de feu</button>
-    <button id="attaque2">Eclat de glace</button>
-    <button id="attaque3">Position de défense</button>
+  <div id="estEnCombatWarrior" class="cacher">
+    <button id="attaque1Warrior" value="Coup d'épée">Coup d'épée</button>
+    <button id="attaque2Warrior" value="Coup lourd">Coup lourd</button>
+    <button id="attaque3Warrior" value="Coup puissant">Coup puissant</button>
+    <button id="attaque4Warrior" value="Position de défense">Position de défense</button>
+  </div>
+
+  <div id="estEnCombatMage" class="cacher">
+    <button id="attaque1Mage" value="Projectile de feu">Projectile de feu</button>
+    <button id="attaque2Mage" value="Boule de feu">Boule de feu</button>
+    <button id="attaque3Mage" value="Tornade de feu">Tornade de feu</button>
+    <button id="attaque4Mage" value="Position de défense">Position de défense</button>
+  </div>
+
+  <div id="estEnCombatRogue" class="cacher">
+    <button id="attaque1Rogue" value="Coup de dague">Coup de dague</button>
+    <button id="attaque2Rogue" value="Entaille">Entaille</button>
+    <button id="attaque3Rogue" value="Coup critique">Coup critique</button>
+    <button id="attaque4Rogue" value="Position de défense">Position de défense</button>
+  </div>
+
+  <div id="estEnCombatArcher" class="cacher">
+    <button id="attaque1Archer" value="Flèche rapide">Flèche rapide</button>
+    <button id="attaque2Archer" value="Flèches multiples">Flèches multiples</button>
+    <button id="attaque3Archer" value="Pluie de flèches">Pluie de flèches</button>
+    <button id="attaque4Archer" value="Position de défense">Position de défense</button>
   </div>
 
   <!-- Ecran lors de la victoire d'un combat -->
