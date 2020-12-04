@@ -55,6 +55,8 @@ $("#loadSave").click(function (e) {
     player.Crit = parseInt(dataArray[10]);
     player.Gold = parseInt(dataArray[11]);
     player.Etape = parseInt(dataArray[12]);
+    player.shopAtk = parseInt(dataArray[13]);
+    player.shopDef = parseInt(dataArray[14]);
     GenerationMonstre();
     $("#entre2Combat").toggleClass("cacher");
     $("#fightPlayerData").toggleClass("cacher");
