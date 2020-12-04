@@ -118,14 +118,17 @@ function GenerationMonstre() {
         console.log(player.Etape)
     } else if (player.Etape == 1) {
         player.Etape += 1;
-        monster = new Monster("Groco");
+        $("#imgMonster").toggleClass(monster.Type);
+        monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
         player.Etape += 1;
-        monster = new Monster("Tankse");
+        $("#imgMonster").toggleClass(monster.Type);
+        monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 3) {
         player.Etape += 1;
+        $("#imgMonster").toggleClass(monster.Type);
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
     }
