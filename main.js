@@ -59,7 +59,6 @@ $("#loadSave").click(function (e) {
     player.shopDef = parseInt(dataArray[14]);
     GenerationMonstre();
     $("#entre2Combat").toggleClass("cacher");
-    $("#fightPlayerData").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
     refreshPlayerData();
 })
@@ -76,7 +75,6 @@ $('#sendPlayer').click(function (e) {
     })
     $("#playerForm").toggleClass("cacher");
     $("#entre2Combat").toggleClass("cacher");
-    $("#fightPlayerData").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
     refreshPlayerData();
 });
@@ -111,11 +109,13 @@ function FinDeCombat() {
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
 function GenerationMonstre() {
     if (player.Pv <= 0) {
+        $("#fightPlayerData").toggleClass("cacher");
         console.log("génération défaite")
         $("#imgPlayer").toggleClass(player.Type);
         $("#imgMonster").toggleClass(monster.Type);
         player.Etape = 0;
     } else if (player.Etape == 0) {
+        $("#fightPlayerData").toggleClass("cacher");
         monster = new Monster("Glout");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 1) {
