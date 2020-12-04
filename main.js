@@ -92,7 +92,6 @@ $("#newCombat").click(function () {
 // Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.
 function FinDeCombat() {
     refreshPlayerData();
-    autoSave();
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
@@ -104,6 +103,7 @@ function FinDeCombat() {
         $("#victoireCombat").toggleClass("cacher");
         GenerationMonstre()
     }
+    autoSave();
 }
 
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
@@ -647,7 +647,7 @@ $("#atkButton").click(function () {
 //Bouton augment defense
 $("#defButton").click(function () {
     let price = [2, 5, 9, 15];
-    if(player.Gold >= price[parseInt(player.shopDef)]){
+    if (player.Gold >= price[parseInt(player.shopDef)]) {
         player.Gold -= price[parseInt(player.shopDef)];
         player.shopDef += 1;
         player.Defense += 7;
@@ -656,7 +656,7 @@ $("#defButton").click(function () {
     else;
 })
 
-function autoSave(){
+function autoSave() {
     $.ajax({
         url: 'savePlayer.php',
         method: 'POST',
