@@ -61,6 +61,7 @@ $("#loadSave").click(function (e) {
     $("#entre2Combat").toggleClass("cacher");
     $("#fightPlayerData").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
+    $("#imgMonster").toggleClass(monster.Type);
     refreshPlayerData();
 })
 
@@ -100,6 +101,7 @@ function FinDeCombat() {
         $("#defaiteCombat").toggleClass("cacher");
         GenerationMonstre()
     } else if (monster.Pv <= 0) {
+        player.Etape += 1;
         player.Gold += monster.Gold;
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
@@ -115,21 +117,19 @@ function GenerationMonstre() {
         $("#imgMonster").toggleClass(monster.Type);
         player.Etape = 0;
     } else if (player.Etape == 0) {
-        player.Etape += 1;
         monster = new Monster("Glout");
         console.log(monster.Type)
     } else if (player.Etape == 1) {
-        player.Etape += 1;
         $("#imgMonster").removeClass("Glout");
         monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
-        player.Etape += 1;
+
         $("#imgMonster").toggleClass("Tankse");
         monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 3) {
-        player.Etape += 1;
+
         $("#imgMonster").toggleClass("Groco");
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
