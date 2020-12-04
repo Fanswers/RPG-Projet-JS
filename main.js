@@ -260,32 +260,44 @@ function shopRefresh(){
 
 //Bouton restaurer PV
 $("#pvButton").click(function(){
-    player.Gold -= 5;
-    player.Pv = player.PvMax;
-    shopRefresh();
+    if(player.Gold >= 5){
+        player.Gold -= 5;
+        player.Pv = player.PvMax;
+        shopRefresh();
+    }
+    else;
 })
 
 //Bouton restaurer PM
 $("#pmButton").click(function(){
-    player.Gold -= 5;
-    player.Pm = player.PmMax;
-    shopRefresh();
+    if(player.Gold >= 5){
+        player.Gold -= 5;
+        player.Pm = player.PmMax;
+        shopRefresh();
+    }
+    else;
 })
 
 //Bouton augmenter attaque
 $("#atkButton").click(function(){
     let price = [2, 5, 9, 15];
-    player.Gold -= price[parseInt(player.shopAtk)];
-    player.shopAtk += 1;
-    player.Attaque += 7;
-    shopRefresh();
+    if(player.Gold >= price[parseInt(player.shopAtk)]){
+        player.Gold -= price[parseInt(player.shopAtk)];
+        player.shopAtk += 1;
+        player.Attaque += 7;
+        shopRefresh();
+    }
+    else;
 })
 
 //Bouton augment defense
 $("#defButton").click(function(){
-    let price = [2, 5, 9, 15];
-    player.Gold -= price[parseInt(player.Def)];
-    player.shopDef += 1;
-    player.Defense += 7;
-    shopRefresh();
+    if(player.Gold >= price[parseInt(player.Def)]){
+        let price = [2, 5, 9, 15];
+        player.Gold -= price[parseInt(player.Def)];
+        player.shopDef += 1;
+        player.Defense += 7;
+        shopRefresh();
+    }
+    else;
 })
