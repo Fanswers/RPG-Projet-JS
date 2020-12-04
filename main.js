@@ -58,7 +58,6 @@ $("#loadSave").click(function (e) {
     GenerationMonstre();
     $("#entre2Combat").toggleClass("cacher");
     $("#fightPlayerData").toggleClass("cacher");
-    $("#imgMonster").toggleClass(monster.Type);
     $("#imgPlayer").toggleClass(player.Type);
     refreshPlayerData();
 })
@@ -109,26 +108,28 @@ function FinDeCombat() {
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
 function GenerationMonstre() {
     if (player.Pv <= 0) {
-        player.Etape = 1;
+        $("#imgPlayer").toggleClass(player.Type);
+        $("#imgMonster").toggleClass(monster.Type);
+        player.Etape = 0;
         monster = new Monster("Glout");
         console.log(player.Etape)
     } else if (player.Etape == 0) {
         player.Etape += 1;
         monster = new Monster("Glout");
-        console.log(player.Etape)
+        $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 1) {
         player.Etape += 1;
-        $("#imgMonster").toggleClass(monster.Type);
+        $("#imgMonster").removeClass("Glout");
         monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
         player.Etape += 1;
-        $("#imgMonster").toggleClass(monster.Type);
+        $("#imgMonster").toggleClass("Tankse");
         monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 3) {
         player.Etape += 1;
-        $("#imgMonster").toggleClass(monster.Type);
+        $("#imgMonster").toggleClass("Groco");
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
     }
@@ -144,6 +145,7 @@ $("#terminerCombat").click(function () {
 $("#nouvellePartie").click(function () {
     $("#defaiteCombat").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
+    GenerationMonstre()
 })
 
 // Fonction au clique du bouton qui lance l'attaque séléctionnée du Warrior 
@@ -594,13 +596,13 @@ function refreshPlayerData() {
 }
 
 //Affichage du magasin
-$("#displayShop").click(function(){
+$("#displayShop").click(function () {
     shopRefresh();
     $("#shop").toggleClass("cacher");
 })
 
 //Rafraichir les données du shop
-function shopRefresh(){
+function shopRefresh() {
     let price = [2, 5, 9, 15];
     refreshPlayerData();
     $("#playerGold").text(player.Gold);
@@ -611,21 +613,21 @@ function shopRefresh(){
 }
 
 //Bouton restaurer PV
-$("#pvButton").click(function(){
+$("#pvButton").click(function () {
     player.Gold -= 5;
     player.Pv = player.PvMax;
     shopRefresh();
 })
 
 //Bouton restaurer PM
-$("#pmButton").click(function(){
+$("#pmButton").click(function () {
     player.Gold -= 5;
     player.Pm = player.PmMax;
     shopRefresh();
 })
 
 //Bouton augmenter attaque
-$("#atkButton").click(function(){
+$("#atkButton").click(function () {
     let price = [2, 5, 9, 15];
     player.Gold -= price[parseInt(player.shopAtk)];
     player.shopAtk += 1;
@@ -634,7 +636,7 @@ $("#atkButton").click(function(){
 })
 
 //Bouton augment defense
-$("#defButton").click(function(){
+$("#defButton").click(function () {
     let price = [2, 5, 9, 15];
     player.Gold -= price[parseInt(player.Def)];
     player.shopDef += 1;
