@@ -110,15 +110,14 @@ function FinDeCombat() {
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
 function GenerationMonstre() {
     if (player.Pv <= 0) {
+        console.log("génération défaite")
         $("#imgPlayer").toggleClass(player.Type);
         $("#imgMonster").toggleClass(monster.Type);
         player.Etape = 0;
-        monster = new Monster("Glout");
-        console.log(player.Etape)
     } else if (player.Etape == 0) {
         player.Etape += 1;
         monster = new Monster("Glout");
-        $("#imgMonster").toggleClass(monster.Type);
+        console.log(monster.Type)
     } else if (player.Etape == 1) {
         player.Etape += 1;
         $("#imgMonster").removeClass("Glout");
@@ -147,7 +146,6 @@ $("#terminerCombat").click(function () {
 $("#nouvellePartie").click(function () {
     $("#defaiteCombat").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
-    GenerationMonstre()
 })
 
 // Fonction au clique du bouton qui lance l'attaque séléctionnée du Warrior 
