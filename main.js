@@ -94,6 +94,7 @@ $("#newCombat").click(function () {
 // Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.
 function FinDeCombat() {
     refreshPlayerData();
+    autoSave();
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
@@ -603,6 +604,7 @@ $("#displayShop").click(function () {
 function shopRefresh() {
     let price = [2, 5, 9, 15];
     refreshPlayerData();
+    autoSave();
     $("#playerGold").text(player.Gold);
     $("#spanPvButton").text();
     $("#spanPmButton").text();
@@ -645,11 +647,19 @@ $("#atkButton").click(function () {
 //Bouton augment defense
 $("#defButton").click(function () {
     let price = [2, 5, 9, 15];
-    if (player.Gold >= price[parseInt(player.Def)]) {
-        player.Gold -= price[parseInt(player.Def)];
+    if(player.Gold >= price[parseInt(player.shopDef)]){
+        player.Gold -= price[parseInt(player.shopDef)];
         player.shopDef += 1;
         player.Defense += 7;
         shopRefresh();
     }
     else;
 })
+
+function autoSave(){
+    $.ajax({
+        url: 'savePlayer.php',
+        method: 'POST',
+        data: player
+    })
+}
