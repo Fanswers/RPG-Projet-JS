@@ -321,7 +321,7 @@ $("#attaque3Mage").click(function () {
     if (player.Pm > 6) {
         player.Pm -= 6;
         if (player.Vitesse > monster.Vitesse) {
-            $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+            $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
             $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
             monster.Pv -= player.Attaque * 2;
             $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
@@ -335,7 +335,7 @@ $("#attaque3Mage").click(function () {
             player.Pv -= monster.Attaque;
             $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             if (player.Pv > 0) {
-                $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+                $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
                 $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
                 monster.Pv -= player.Attaque * 3;
                 $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
@@ -431,7 +431,7 @@ $("#attaque3Rogue").click(function () {
     if (player.Pm > 6) {
         player.Pm -= 6;
         if (player.Vitesse > monster.Vitesse) {
-            $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+            $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
             $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
             monster.Pv -= player.Attaque * 2;
             $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
@@ -445,7 +445,7 @@ $("#attaque3Rogue").click(function () {
             player.Pv -= monster.Attaque;
             $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             if (player.Pv > 0) {
-                $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+                $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
                 $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
                 monster.Pv -= player.Attaque * 3;
                 $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
@@ -541,7 +541,7 @@ $("#attaque3Archer").click(function () {
     if (player.Pm > 6) {
         player.Pm -= 6;
         if (player.Vitesse > monster.Vitesse) {
-            $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+            $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
             $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
             monster.Pv -= player.Attaque * 2;
             $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
@@ -555,7 +555,7 @@ $("#attaque3Archer").click(function () {
             player.Pv -= monster.Attaque;
             $("#messages").append(`<p>Vous avez perdu  ${monster.Attaque} points de vie !</p>`);
             if (player.Pv > 0) {
-                $("#messages").append(`<p>Vous lancez ${$("#attaque2" + player.Type).val()} !</p>`);
+                $("#messages").append(`<p>Vous lancez ${$("#attaque3" + player.Type).val()} !</p>`);
                 $("#messages").append(`<p>Vous avez perdu 6 pm !</p>`);
                 monster.Pv -= player.Attaque * 3;
                 $("#messages").append(`<p>Le monstre a perdu ${player.Attaque * 2} points de vie !</p>`);
