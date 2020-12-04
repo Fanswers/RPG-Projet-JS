@@ -61,7 +61,7 @@
       <div id="imgMonster" class="IMG monster"></div>
       <div id="imgPlayer" class="IMG player"></div>
       <button id="newCombat">Attaquer</button>
-      <button id="shop">Magasin</button>
+      <button id="displayShop">Magasin</button>
     </div>
 
     <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
@@ -94,10 +94,21 @@
       <button id="attaque4Archer" value="Position de défense">Position de défense</button>
     </div>
   </div>
-  <!-- Ecran des données du joueur -->
+
+  <!-- Affichage des données du joueur -->
   <div id="fightPlayerData" class="cacher">
     <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
     <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+  </div>
+
+  <!-- Affichage du magasin -->
+  <div id="shop" class="cacher">
+    <p>~~~   SHOP   ~~~</p>
+    <p>Votre or : <span id="playerGold"></span></p>
+    <p>Restaurer PV <button id="pvButton">5 gold</button></p>
+    <p>Restaurer PM <button id="pmButton">5 gold</button></p>
+    <p>Attaque +7 <button id="atkButton"><span id="spanAtkButton"></span> gold</button></p>
+    <p>Defense +7 <button id="defButton"><span id="spanDefButton"></span> gold</button></p>
   </div>
 
   <!-- Ecran lors de la victoire d'un combat -->

@@ -592,3 +592,52 @@ function refreshPlayerData() {
     $("#pvMax").text(player.PvMax);
     $("#pmMax").text(player.PmMax);
 }
+
+//Affichage du magasin
+$("#displayShop").click(function(){
+    shopRefresh();
+    $("#shop").toggleClass("cacher");
+})
+
+//Rafraichir les données du shop
+function shopRefresh(){
+    let price = [2, 5, 9, 15];
+    refreshPlayerData();
+    $("#playerGold").text(player.Gold);
+    $("#spanPvButton").text();
+    $("#spanPmButton").text();
+    $("#spanAtkButton").text(price[parseInt(player.shopAtk)]);
+    $("#spanDefButton").text(price[parseInt(player.shopDef)]);
+}
+
+//Bouton restaurer PV
+$("#pvButton").click(function(){
+    player.Gold -= 5;
+    player.Pv = player.PvMax;
+    shopRefresh();
+})
+
+//Bouton restaurer PM
+$("#pmButton").click(function(){
+    player.Gold -= 5;
+    player.Pm = player.PmMax;
+    shopRefresh();
+})
+
+//Bouton augmenter attaque
+$("#atkButton").click(function(){
+    let price = [2, 5, 9, 15];
+    player.Gold -= price[parseInt(player.shopAtk)];
+    player.shopAtk += 1;
+    player.Attaque += 7;
+    shopRefresh();
+})
+
+//Bouton augment defense
+$("#defButton").click(function(){
+    let price = [2, 5, 9, 15];
+    player.Gold -= price[parseInt(player.Def)];
+    player.shopDef += 1;
+    player.Defense += 7;
+    shopRefresh();
+})
