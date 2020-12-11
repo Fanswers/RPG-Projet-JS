@@ -57,6 +57,12 @@
   <div class="combat">
     <div id="messages"></div>
 
+    <!-- Affichage des données du joueur -->
+    <div id="fightPlayerData" class="cacher">
+    <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
+    <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+    </div>
+
     <!-- Ecran avant un combat, accès au magasin possible -->
     <div id="entre2Combat" class="cacher">
       <div id="imgMonster" class="IMG monster"></div>
@@ -94,12 +100,6 @@
       <button id="attaque3Archer" value="Pluie de flèches">Pluie de flèches</button>
       <button id="attaque4Archer" value="Position de défense">Position de défense</button>
     </div>
-  </div>
-
-  <!-- Affichage des données du joueur -->
-  <div id="fightPlayerData" class="cacher">
-    <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
-    <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
   </div>
 
   <!-- Affichage du magasin -->
