@@ -22,6 +22,7 @@ $("#start").click(function () {
             }
             else {
                 $("#loadSave").toggleClass("cacher");
+                $("#loadGameDisplay").toggleClass("cacher");
             }
         }
     })
@@ -655,9 +656,18 @@ $("#defButton").click(function () {
 })
 
 function autoSave() {
-    $.ajax({
-        url: 'savePlayer.php',
-        method: 'POST',
-        data: player
-    })
+    if(player.Pv > 0){
+        $.ajax({
+            url: 'savePlayer.php',
+            method: 'POST',
+            data: player
+        })
+    }
+    else{
+        $.ajax({
+            url: 'savePlayer.php',
+            method: 'POST',
+            data: null
+        })
+    }
 }

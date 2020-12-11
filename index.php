@@ -17,7 +17,7 @@
 
   <div>
     <form id="formSave" class="cacher">
-      <p>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+      <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
       <button id="loadSave">Charger la partie</button>
       <button id="newGame">Nouvelle partie</button>
     </form>
