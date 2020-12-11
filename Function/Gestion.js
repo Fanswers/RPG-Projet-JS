@@ -66,6 +66,7 @@ export function loadSave(e) {
     $("#entre2Combat").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
     $("#fightPlayerData").toggleClass("cacher");
+    $("#affichagePlayerMonster").toggleClass("cacher");
     refreshPlayerData(player);
 }
 
@@ -84,6 +85,7 @@ export function sendPlayer(e) {
     $("#entre2Combat").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
     $("#fightPlayerData").toggleClass("cacher");
+    $("#affichagePlayerMonster").toggleClass("cacher");
     refreshPlayerData(player);
 };
 

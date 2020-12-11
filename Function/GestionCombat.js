@@ -37,12 +37,15 @@ export function FinDeCombat(player, monster) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
         $("#fightPlayerData").toggleClass("cacher");
+        $("#affichagePlayerMonster").toggleClass("cacher");
         player, monster = GenerationMonstre(player, monster);
     } else if (monster.Pv <= 0) {
         player.Etape += 1;
         player.Gold += monster.Gold;
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#victoireCombat").toggleClass("cacher");
+        $("#fightPlayerData").toggleClass("cacher");
+        $("#affichagePlayerMonster").toggleClass("cacher");
         player, monster = GenerationMonstre(player, monster);
     }
     gestion.autoSave(player);

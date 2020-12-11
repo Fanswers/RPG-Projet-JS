@@ -18,6 +18,8 @@ $("#terminerCombat").click(function () {
     $("#messages").empty();
     $("#entre2Combat").toggleClass("cacher");
     $("#victoireCombat").toggleClass("cacher");
+    $("#fightPlayerData").toggleClass("cacher");
+    $("#affichagePlayerMonster").toggleClass("cacher");
 })
 
 // Fin de partie suite a la défaite du player, possibilité de lancer une nouvelle partie
