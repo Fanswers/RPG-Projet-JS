@@ -17,19 +17,22 @@ export function GenerationMonstre(player, monster) {
         monster = new Monster("Glout");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 1) {
+        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Glout");
         monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
+        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Tankse");
         monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 3) {
+        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Groco");
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
     }
-    return(player, monster);
+    return (player, monster);
 }
 
 // Fonction de fin de combat lorsqu'une des deux entités (personnage ou monstre) atteint 0 point de vie.

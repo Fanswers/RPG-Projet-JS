@@ -17,10 +17,13 @@
 
   <div>
     <form id="formSave" class="cacher">
-      <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
-      <div id="loadSave"></div>
-      <div id="newGame">
-        </bdiv>
+      <div id="cardLoad">
+        <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+        <div id="loadSave"></div>
+      </div>
+      <div id="cardNew">
+        <div id="newGame"></div>
+      </div>
     </form>
   </div>
 
@@ -50,7 +53,7 @@
         </p>
       </div>
     </div>
-    <button id="sendPlayer">Jouer</button>
+    <div id="sendPlayer"></div>
   </form>
 
   <!-- Affichage des actions -->

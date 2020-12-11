@@ -23,8 +23,7 @@ export function start() {
                 choose(data)
             }
             else {
-                $("#loadSave").toggleClass("cacher");
-                $("#loadGameDisplay").toggleClass("cacher");
+                $("#cardLoad").toggleClass("cacher");
             }
         }
     })
@@ -39,14 +38,14 @@ function choose(data) {
 }
 
 // Fonction de création d'une nouvelle partie
-export function newGame(e){
+export function newGame(e) {
     e.preventDefault();
     $("#formSave").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
 }
 
 
-export function loadSave(e){
+export function loadSave(e) {
     e.preventDefault();
     $("#formSave").toggleClass("cacher");
     player = new Personnage(dataArray[0], dataArray[1])
@@ -93,22 +92,22 @@ export function newCombat() {
 
 //Attaques
 //Warrior
-export function atkWarrior1(){
+export function atkWarrior1() {
     player, monster = atkPlayer.coupDepee(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkWarrior2(){
+export function atkWarrior2() {
     player, monster = atkPlayer.coupLourd(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkWarrior3(){
+export function atkWarrior3() {
     player, monster = atkPlayer.coupPuissant(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkWarrior4(){
+export function atkWarrior4() {
 
     player, monster = atkPlayer.positionDefenseWarrior(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
@@ -116,64 +115,64 @@ export function atkWarrior4(){
 }
 
 //Mage
-export function atkMage1(){
+export function atkMage1() {
     player, monster = atkPlayer.projectileDeFeu(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkMage2(){
+export function atkMage2() {
     player, monster = atkPlayer.bouleDeFeu(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkMage3(){
+export function atkMage3() {
     player, monster = atkPlayer.tornadeDeFeu(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkMage4(){
+export function atkMage4() {
     player, monster = atkPlayer.positionDefenseMage(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
 //Rogue
-export function atkRogue1(){
+export function atkRogue1() {
     player, monster = atkPlayer.coupDeDague(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkRogue2(){
+export function atkRogue2() {
     player, monster = atkPlayer.entaille(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkRogue3(){
+export function atkRogue3() {
     player, monster = atkPlayer.coupCritique(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkRogue4(){
+export function atkRogue4() {
     player, monster = atkPlayer.positionDefenseRogue(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
 //Archer
-export function atkArcher1(){
+export function atkArcher1() {
     player, monster = atkPlayer.flecheRapide(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkArcher2(){
+export function atkArcher2() {
     player, monster = atkPlayer.flecheMultiple(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkArcher3(){
+export function atkArcher3() {
     player, monster = atkPlayer.pluieDeFleche(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
 
-export function atkArcher4(){
+export function atkArcher4() {
     player, monster = atkPlayer.positionDefenseArcher(player, monster);
     player, monster = gestionCombat.FinDeCombat(player, monster);
 }
@@ -187,7 +186,7 @@ export function refreshPlayerData(player) {
 }
 
 //Affichage du magasin
-export function displayShop(){
+export function displayShop() {
     shopRefresh();
     $("#shop").toggleClass("cacher");
 }
@@ -204,7 +203,7 @@ function shopRefresh() {
     $("#spanDefButton").text(price[parseInt(player.shopDef)]);
 }
 
-export function pvButton(){
+export function pvButton() {
     if (player.Gold >= 5) {
         player.Gold -= 5;
         player.Pv = player.PvMax;
@@ -213,7 +212,7 @@ export function pvButton(){
     else;
 }
 
-export function pmButton(){
+export function pmButton() {
     if (player.Gold >= 5) {
         player.Gold -= 5;
         player.Pm = player.PmMax;
@@ -222,7 +221,7 @@ export function pmButton(){
     else;
 }
 
-export function atkButton(){
+export function atkButton() {
     let price = [2, 5, 9, 15];
     if (player.Gold >= price[parseInt(player.shopAtk)]) {
         player.Gold -= price[parseInt(player.shopAtk)];
@@ -233,7 +232,7 @@ export function atkButton(){
     else;
 }
 
-export function defButton(){
+export function defButton() {
     let price = [2, 5, 9, 15];
     if (player.Gold >= price[parseInt(player.shopDef)]) {
         player.Gold -= price[parseInt(player.shopDef)];
@@ -246,14 +245,14 @@ export function defButton(){
 
 
 export function autoSave(player) {
-    if(player.Pv > 0){
+    if (player.Pv > 0) {
         $.ajax({
             url: './savePlayer.php',
             method: 'POST',
             data: player
         })
     }
-    else{
+    else {
         $.ajax({
             url: './savePlayer.php',
             method: 'POST',
