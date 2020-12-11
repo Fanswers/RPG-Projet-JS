@@ -18,7 +18,7 @@
   <div>
     <form id="formSave" class="cacher">
       <div id="cardLoad">
-        <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+        <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> <br> Classe :<span id="savedType"></span></p>
         <div id="loadSave"></div>
       </div>
       <div id="cardNew">
