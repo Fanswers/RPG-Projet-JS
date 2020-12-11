@@ -123,15 +123,13 @@ function GenerationMonstre() {
         monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
-        $("#imgMonster").toggleClass("Tankse");
+        $("#imgMonster").removeClass("Tankse");
         monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
-        console.log(player.Etape)
     } else if (player.Etape == 3) {
-        $("#imgMonster").toggleClass("Groco");
+        $("#imgMonster").removeClass("Groco");
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
-        console.log(player.Etape)
     }
 }
 

@@ -26,16 +26,16 @@ export class Monster extends Entity {
         this.Gold = 7;
         break;
 
-        case 'Groco':
-            this.Pv = 10;
-            this.Defense = 5;
-            this.Vitesse = 50;
-            this.Esquive = 0, 3;
-            this.Attaque = 45;
-            this.Pm = 15;
-            this.Crit = 0, 1;
-            this.Gold = 9;
-            break;
+      case 'Groco':
+        this.Pv = 10;
+        this.Defense = 5;
+        this.Vitesse = 50;
+        this.Esquive = 0, 3;
+        this.Attaque = 45;
+        this.Pm = 15;
+        this.Crit = 0, 1;
+        this.Gold = 9;
+        break;
 
       case 'Noxpul':
         this.Pv = 180;
