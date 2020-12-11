@@ -8,26 +8,21 @@ import { Monster } from '../Class/Monster.js';
 export function GenerationMonstre(player, monster) {
     console.log("oui");
     if (player.Pv <= 0) {
-        $("#fightPlayerData").toggleClass("cacher");
         $("#imgPlayer").toggleClass(player.Type);
         $("#imgMonster").toggleClass(monster.Type);
         player.Etape = 0;
     } else if (player.Etape == 0) {
-        $("#fightPlayerData").toggleClass("cacher");
         monster = new Monster("Glout");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 1) {
-        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Glout");
         monster = new Monster("Tankse");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 2) {
-        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Tankse");
         monster = new Monster("Groco");
         $("#imgMonster").toggleClass(monster.Type);
     } else if (player.Etape == 3) {
-        $("#fightPlayerData").toggleClass("cacher");
         $("#imgMonster").removeClass("Groco");
         monster = new Monster("Noxpul");
         $("#imgMonster").toggleClass(monster.Type);
@@ -41,6 +36,7 @@ export function FinDeCombat(player, monster) {
     if (player.Pv <= 0) {
         $("#estEnCombat" + player.Type).toggleClass("cacher");
         $("#defaiteCombat").toggleClass("cacher");
+        $("#fightPlayerData").toggleClass("cacher");
         player, monster = GenerationMonstre(player, monster);
     } else if (monster.Pv <= 0) {
         player.Etape += 1;

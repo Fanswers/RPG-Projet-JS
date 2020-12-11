@@ -65,6 +65,7 @@ export function loadSave(e) {
     player, monster = gestionCombat.GenerationMonstre(player, monster);
     $("#entre2Combat").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
+    $("#fightPlayerData").toggleClass("cacher");
     refreshPlayerData(player);
 }
 
@@ -82,6 +83,7 @@ export function sendPlayer(e) {
     $("#playerForm").toggleClass("cacher");
     $("#entre2Combat").toggleClass("cacher");
     $("#imgPlayer").toggleClass(player.Type);
+    $("#fightPlayerData").toggleClass("cacher");
     refreshPlayerData(player);
 };
 
