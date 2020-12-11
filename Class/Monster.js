@@ -5,7 +5,7 @@ export class Monster extends Entity {
     super(Type, Name, Pv, Defense, Vitesse, Esquive, Attaque, Pm, Crit, Gold);
     switch (Type) {
       case 'Glout':
-        this.Pv = 10;
+        this.Pv = 80;
         this.Defense = 5;
         this.Vitesse = 50;
         this.Esquive = 0, 3;

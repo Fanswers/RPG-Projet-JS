@@ -68,5 +68,9 @@ export class Personnage extends Entity {
                 this.shopDef = 0;
                 break;
         }
+
+        
     }
+
+    
 }
