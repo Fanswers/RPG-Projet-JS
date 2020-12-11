@@ -11,15 +11,18 @@
 <!-- Formulaire pour la création du personnage -->
 
 <body>
-  <div>
-    <button id="start">Commencer</button>
+  <div id="start">
   </div>
 
   <div>
     <form id="formSave" class="cacher">
-      <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
-      <button id="loadSave">Charger la partie</button>
-      <button id="newGame">Nouvelle partie</button>
+      <div id="loadCard">
+        <p id="loadGameDisplay">SAUVEGARDE<br>Pseudo : <span id="savedName"></span> Classe :<span id="savedType"></span></p>
+        <div id="loadSave">Charger la partie</div>
+      </div>
+      <div id="newCard">
+        <div id="newGame">Nouvelle partie</div>
+      </div>
     </form>
   </div>
 
@@ -103,7 +106,7 @@
 
   <!-- Affichage du magasin -->
   <div id="shop" class="cacher">
-    <p>~~~   SHOP   ~~~</p>
+    <p>~~~ SHOP ~~~</p>
     <p>Votre or : <span id="playerGold"></span></p>
     <p>Restaurer PV <button id="pvButton">5 gold</button></p>
     <p>Restaurer PM <button id="pmButton">5 gold</button></p>
