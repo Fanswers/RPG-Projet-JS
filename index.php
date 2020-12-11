@@ -60,6 +60,12 @@
   <div class="combat">
     <div id="messages"></div>
 
+    <!-- Affichage des données du joueur -->
+    <div id="fightPlayerData" class="cacher">
+    <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
+    <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+    </div>
+
     <!-- Ecran avant un combat, accès au magasin possible -->
     <div id="entre2Combat" class="cacher">
       <div id="imgMonster" class="IMG monster"></div>
@@ -71,6 +77,8 @@
     <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
 
     <div id="estEnCombatWarrior" class="cacher">
+        <div id="imgMonster" class="IMG monster"></div>
+        <div id="imgPlayer" class="IMG player"></div>
       <button id="attaque1Warrior" value="Coup d'épée">Coup d'épée</button>
       <button id="attaque2Warrior" value="Coup lourd">Coup lourd</button>
       <button id="attaque3Warrior" value="Coup puissant">Coup puissant</button>
@@ -78,6 +86,8 @@
     </div>
 
     <div id="estEnCombatMage" class="cacher">
+        <div id="imgMonster" class="IMG monster"></div>
+      <div id="imgPlayer" class="IMG player"></div>
       <button id="attaque1Mage" value="Projectile de feu">Projectile de feu</button>
       <button id="attaque2Mage" value="Boule de feu">Boule de feu</button>
       <button id="attaque3Mage" value="Tornade de feu">Tornade de feu</button>
@@ -85,6 +95,8 @@
     </div>
 
     <div id="estEnCombatRogue" class="cacher">
+        <div id="imgMonster" class="IMG monster"></div>
+        <div id="imgPlayer" class="IMG player"></div>
       <button id="attaque1Rogue" value="Coup de dague">Coup de dague</button>
       <button id="attaque2Rogue" value="Entaille">Entaille</button>
       <button id="attaque3Rogue" value="Coup critique">Coup critique</button>
@@ -92,17 +104,13 @@
     </div>
 
     <div id="estEnCombatArcher" class="cacher">
+        <div id="imgMonster" class="IMG monster"></div>
+      <div id="imgPlayer" class="IMG player"></div>
       <button id="attaque1Archer" value="Flèche rapide">Flèche rapide</button>
       <button id="attaque2Archer" value="Flèches multiples">Flèches multiples</button>
       <button id="attaque3Archer" value="Pluie de flèches">Pluie de flèches</button>
       <button id="attaque4Archer" value="Position de défense">Position de défense</button>
     </div>
-  </div>
-
-  <!-- Affichage des données du joueur -->
-  <div id="fightPlayerData" class="cacher">
-    <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
-    <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
   </div>
 
   <!-- Affichage du magasin -->

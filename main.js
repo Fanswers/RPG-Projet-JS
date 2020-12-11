@@ -15,12 +15,14 @@ $("#newCombat").click(gestion.newCombat);
 
 // Terminer la fin d'un combat retour a l'accès du shop et au lancement d'un nouveau combat
 $("#terminerCombat").click(function () {
+    $("#messages").empty();
     $("#entre2Combat").toggleClass("cacher");
     $("#victoireCombat").toggleClass("cacher");
 })
 
 // Fin de partie suite a la défaite du player, possibilité de lancer une nouvelle partie
 $("#nouvellePartie").click(function () {
+    $("#messages").empty();
     $("#defaiteCombat").toggleClass("cacher");
     $("#playerForm").toggleClass("cacher");
 })
