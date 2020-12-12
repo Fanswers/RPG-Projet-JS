@@ -1,5 +1,3 @@
-import * as gestion from './Gestion.js';
-
 
 // Fonction au clique du bouton qui lance l'attaque séléctionnée du Warrior 
 export function coupDepee(player, monster) {

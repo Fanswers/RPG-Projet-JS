@@ -1,10 +1,7 @@
 import * as gestion from './Gestion.js';
-import { Personnage } from '../Class/Personnage.js';
 import { Monster } from '../Class/Monster.js';
 
 let monsterList = ["Glout", "Tankse", "Groco", "Noxpul"];
-
-
 
 // Génération d'un nouveau monstre selon le résultat du combat, défaite/vitoire
 export function GenerationMonstre(player, monster) {
