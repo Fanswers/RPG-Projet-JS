@@ -59,18 +59,18 @@
   <!-- Affichage des actions -->
   <div class="combat">
     <div id="messages"></div>
-    <!-- Affichage des données du joueur -->
-    <div id="fightPlayerData" class="cacher">
-      <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
-      <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
-    </div>
+
 
 
     <div id="affichagePlayerMonster" class="cacher">
       <div id="imgMonster" class="IMG monster"></div>
       <div id="imgPlayer" class="IMG player"></div>
 
-
+      <!-- Affichage des données du joueur -->
+      <div id="fightPlayerData" class="cacher">
+        <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
+        <p>Pm : <span id="pm"></span> PmMax : <span id="pmMax"></span></p>
+      </div>
 
       <!-- Ecran avant un combat, accès au magasin possible -->
       <div id="entre2Combat" class="cacher">
@@ -125,13 +125,13 @@
   <!-- Ecran lors de la victoire d'un combat -->
   <div id="victoireCombat" class="cacher">
     <h1>Vous avez gagné !</h1>
-    <button id="terminerCombat">Terminer</button>
+    <div id="terminerCombat"></div>
   </div>
 
   <!-- Ecran lors d'une défaite, fin de partie -->
   <div id="defaiteCombat" class="cacher">
     <h1>Vous êtes mort.</h1>
-    <button id="nouvellePartie">Nouvelle partie</button>
+    <div id="nouvellePartie"></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
