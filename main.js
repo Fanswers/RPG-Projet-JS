@@ -6,8 +6,10 @@ $("#start").click(gestion.start);
 // Fonction de création d'une nouvelle partie
 $("#newGame").click(gestion.newGame)
 
+// Fonction de chargement d'une sauvegarde
 $("#loadSave").click(gestion.loadSave)
 
+// Fonction d'envoi du pplayer dans la bdd
 $('#sendPlayer').click(gestion.sendPlayer);
 
 // Fonction de lancement de combat au clique du bouton concerné

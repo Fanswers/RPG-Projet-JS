@@ -1,6 +1,5 @@
 import * as gestionCombat from './GestionCombat.js';
 import { Personnage } from '../Class/Personnage.js';
-import { Monster } from '../Class/Monster.js';
 import * as atkPlayer from './AttaquePlayer.js';
 
 
@@ -29,7 +28,7 @@ export function start() {
     })
 }
 
-
+//Fonction permettant l'affichage de la sauvegarde
 function choose(data) {
     data = data.replace(/["']/g, "");
     dataArray = data.split(",");
@@ -44,7 +43,7 @@ export function newGame(e) {
     $("#playerForm").toggleClass("cacher");
 }
 
-
+// Fonction de chargement d'une sauvegarde
 export function loadSave(e) {
     e.preventDefault();
     $("#formSave").toggleClass("cacher");
@@ -70,7 +69,7 @@ export function loadSave(e) {
     refreshPlayerData(player);
 }
 
-
+// Fonction d'envoi du pplayer dans la bdd
 export function sendPlayer(e) {
     e.preventDefault();
     playerInfo = $('#playerForm').serializeArray();
@@ -89,6 +88,7 @@ export function sendPlayer(e) {
     refreshPlayerData(player);
 };
 
+// Lancement d'un nouveau combat et gestion des affichages
 export function newCombat() {
     $("#entre2Combat").toggleClass("cacher");
     $("#estEnCombat" + player.Type).toggleClass("cacher");
@@ -193,6 +193,7 @@ export function refreshPlayerData(player) {
 export function displayShop() {
     shopRefresh();
     $("#shop").toggleClass("cacher");
+    $("#newCombat").toggleClass("cacher");
 }
 
 //Rafraichir les données du shop
