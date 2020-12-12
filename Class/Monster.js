@@ -7,7 +7,7 @@ export class Monster extends Entity {
       case 'Glout':
         this.Pv = 80;
         this.Defense = 5;
-        this.Vitesse = 50;
+        this.Vitesse = 4;
         this.Esquive = 0, 3;
         this.Attaque = 15;
         this.Pm = 15;
@@ -18,7 +18,7 @@ export class Monster extends Entity {
       case 'Tankse':
         this.Pv = 120;
         this.Defense = 5;
-        this.Vitesse = 50;
+        this.Vitesse = 9;
         this.Esquive = 0, 3;
         this.Attaque = 40;
         this.Pm = 15;
@@ -29,7 +29,7 @@ export class Monster extends Entity {
       case 'Groco':
         this.Pv = 150;
         this.Defense = 5;
-        this.Vitesse = 50;
+        this.Vitesse = 14;
         this.Esquive = 0, 3;
         this.Attaque = 45;
         this.Pm = 15;
@@ -40,7 +40,7 @@ export class Monster extends Entity {
       case 'Noxpul':
         this.Pv = 180;
         this.Defense = 5;
-        this.Vitesse = 50;
+        this.Vitesse = 19;
         this.Esquive = 0, 3;
         this.Attaque = 55;
         this.Pm = 15;
