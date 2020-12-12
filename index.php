@@ -58,6 +58,7 @@
 
   <!-- Affichage des actions -->
   <div class="combat">
+    <div id="messages"></div>
     <!-- Affichage des données du joueur -->
     <div id="fightPlayerData" class="cacher">
       <p>Pv : <span id="pv"></span> PvMax : <span id="pvMax"></span></p>
@@ -66,15 +67,11 @@
 
 
     <div id="affichagePlayerMonster" class="cacher">
-    </div>
-
-    <div id="messages"></div>
-
-    <!-- Ecran avant un combat, accès au magasin possible -->
-    <div id="entre2Combat" class="cacher">
       <div id="imgMonster" class="IMG monster"></div>
       <div id="imgPlayer" class="IMG player"></div>
     </div>
+
+
     <!-- Ecran avant un combat, accès au magasin possible -->
     <div id="entre2Combat" class="cacher">
       <button id="newCombat">Attaquer</button>
@@ -83,14 +80,14 @@
 
     <!-- Affichage du magasin -->
     <div id="shop" class="cacher">
-        <div id="inShop">
-            <p>~~~ SHOP ~~~</p>
-            <p>Votre or : <span id="playerGold"></span></p>
-            <p>Restaurer PV <button id="pvButton">5 gold</button></p>
-            <p>Restaurer PM <button id="pmButton">5 gold</button></p>
-            <p>Attaque +7 <button id="atkButton"><span id="spanAtkButton"></span> gold</button></p>
-            <p>Defense +7 <button id="defButton"><span id="spanDefButton"></span> gold</button></p>
-        </div>
+      <div id="inShop">
+        <p>~~~ SHOP ~~~</p>
+        <p>Votre or : <span id="playerGold"></span></p>
+        <p>Restaurer PV <button id="pvButton">5 gold</button></p>
+        <p>Restaurer PM <button id="pmButton">5 gold</button></p>
+        <p>Attaque +7 <button id="atkButton"><span id="spanAtkButton"></span> gold</button></p>
+        <p>Defense +7 <button id="defButton"><span id="spanDefButton"></span> gold</button></p>
+      </div>
     </div>
 
     <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
@@ -123,7 +120,7 @@
       <button id="attaque4Archer" value="Position de défense">Position de défense</button>
     </div>
 
-    
+
   </div>
 
   <!-- Ecran lors de la victoire d'un combat -->
