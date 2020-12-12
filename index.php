@@ -69,58 +69,57 @@
     <div id="affichagePlayerMonster" class="cacher">
       <div id="imgMonster" class="IMG monster"></div>
       <div id="imgPlayer" class="IMG player"></div>
-    </div>
 
 
-    <!-- Ecran avant un combat, accès au magasin possible -->
-    <div id="entre2Combat" class="cacher">
-      <button id="newCombat">Attaquer</button>
-      <button id="displayShop">Magasin</button>
-    </div>
 
-    <!-- Affichage du magasin -->
-    <div id="shop" class="cacher">
-      <div id="inShop">
-        <p>~~~ SHOP ~~~</p>
-        <p>Votre or : <span id="playerGold"></span></p>
-        <p>Restaurer PV <button id="pvButton">5 gold</button></p>
-        <p>Restaurer PM <button id="pmButton">5 gold</button></p>
-        <p>Attaque +7 <button id="atkButton"><span id="spanAtkButton"></span> gold</button></p>
-        <p>Defense +7 <button id="defButton"><span id="spanDefButton"></span> gold</button></p>
+      <!-- Ecran avant un combat, accès au magasin possible -->
+      <div id="entre2Combat" class="cacher">
+        <button id="newCombat">Attaquer</button>
+        <button id="displayShop">Magasin</button>
+      </div>
+
+      <!-- Affichage du magasin -->
+      <div id="shop" class="cacher">
+        <div id="inShop">
+          <p>~~~ SHOP ~~~</p>
+          <p>Votre or : <span id="playerGold"></span></p>
+          <p>Restaurer PV <button id="pvButton">5 gold</button></p>
+          <p>Restaurer PM <button id="pmButton">5 gold</button></p>
+          <p>Attaque +7 <button id="atkButton"><span id="spanAtkButton"></span> gold</button></p>
+          <p>Defense +7 <button id="defButton"><span id="spanDefButton"></span> gold</button></p>
+        </div>
+      </div>
+
+      <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
+
+      <div id="estEnCombatWarrior" class="cacher">
+        <button id="attaque1Warrior" value="Coup d'épée">Coup d'épée</button>
+        <button id="attaque2Warrior" value="Coup lourd">Coup lourd</button>
+        <button id="attaque3Warrior" value="Coup puissant">Coup puissant</button>
+        <button id="attaque4Warrior" value="Position de défense">Position de défense</button>
+      </div>
+
+      <div id="estEnCombatMage" class="cacher">
+        <button id="attaque1Mage" value="Projectile de feu">Projectile de feu</button>
+        <button id="attaque2Mage" value="Boule de feu">Boule de feu</button>
+        <button id="attaque3Mage" value="Tornade de feu">Tornade de feu</button>
+        <button id="attaque4Mage" value="Position de défense">Position de défense</button>
+      </div>
+
+      <div id="estEnCombatRogue" class="cacher">
+        <button id="attaque1Rogue" value="Coup de dague">Coup de dague</button>
+        <button id="attaque2Rogue" value="Entaille">Entaille</button>
+        <button id="attaque3Rogue" value="Coup critique">Coup critique</button>
+        <button id="attaque4Rogue" value="Position de défense">Position de défense</button>
+      </div>
+
+      <div id="estEnCombatArcher" class="cacher">
+        <button id="attaque1Archer" value="Flèche rapide">Flèche rapide</button>
+        <button id="attaque2Archer" value="Flèches multiples">Flèches multiples</button>
+        <button id="attaque3Archer" value="Pluie de flèches">Pluie de flèches</button>
+        <button id="attaque4Archer" value="Position de défense">Position de défense</button>
       </div>
     </div>
-
-    <!-- Ecran lors d'un combat, affichage des compétences selon la classe -->
-
-    <div id="estEnCombatWarrior" class="cacher">
-      <button id="attaque1Warrior" value="Coup d'épée">Coup d'épée</button>
-      <button id="attaque2Warrior" value="Coup lourd">Coup lourd</button>
-      <button id="attaque3Warrior" value="Coup puissant">Coup puissant</button>
-      <button id="attaque4Warrior" value="Position de défense">Position de défense</button>
-    </div>
-
-    <div id="estEnCombatMage" class="cacher">
-      <button id="attaque1Mage" value="Projectile de feu">Projectile de feu</button>
-      <button id="attaque2Mage" value="Boule de feu">Boule de feu</button>
-      <button id="attaque3Mage" value="Tornade de feu">Tornade de feu</button>
-      <button id="attaque4Mage" value="Position de défense">Position de défense</button>
-    </div>
-
-    <div id="estEnCombatRogue" class="cacher">
-      <button id="attaque1Rogue" value="Coup de dague">Coup de dague</button>
-      <button id="attaque2Rogue" value="Entaille">Entaille</button>
-      <button id="attaque3Rogue" value="Coup critique">Coup critique</button>
-      <button id="attaque4Rogue" value="Position de défense">Position de défense</button>
-    </div>
-
-    <div id="estEnCombatArcher" class="cacher">
-      <button id="attaque1Archer" value="Flèche rapide">Flèche rapide</button>
-      <button id="attaque2Archer" value="Flèches multiples">Flèches multiples</button>
-      <button id="attaque3Archer" value="Pluie de flèches">Pluie de flèches</button>
-      <button id="attaque4Archer" value="Position de défense">Position de défense</button>
-    </div>
-
-
   </div>
 
   <!-- Ecran lors de la victoire d'un combat -->

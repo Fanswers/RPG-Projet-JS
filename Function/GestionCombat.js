@@ -38,6 +38,7 @@ export function FinDeCombat(player, monster) {
         $("#defaiteCombat").toggleClass("cacher");
         $("#fightPlayerData").toggleClass("cacher");
         $("#affichagePlayerMonster").toggleClass("cacher");
+        $("#messages").empty();
         player, monster = GenerationMonstre(player, monster);
     } else if (monster.Pv <= 0) {
         player.Etape += 1;
@@ -46,6 +47,7 @@ export function FinDeCombat(player, monster) {
         $("#victoireCombat").toggleClass("cacher");
         $("#fightPlayerData").toggleClass("cacher");
         $("#affichagePlayerMonster").toggleClass("cacher");
+        $("#messages").empty();
         player, monster = GenerationMonstre(player, monster);
     }
     gestion.autoSave(player);
