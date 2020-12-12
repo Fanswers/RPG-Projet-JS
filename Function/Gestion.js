@@ -193,6 +193,7 @@ export function refreshPlayerData(player) {
 export function displayShop() {
     shopRefresh();
     $("#shop").toggleClass("cacher");
+    $("#newCombat").toggleClass("cacher");
 }
 
 //Rafraichir les données du shop
